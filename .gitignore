@@ -1,0 +1,122 @@
+# Ignore everything by default
+/*
+
+# Include common config files in home directory
+!.zshrc
+!.zprofile
+!.zshenv
+!.zsh_history
+!.zsh.env.example
+!.bashrc
+!.bash_profile
+!.p10k.zsh
+!.npmrc
+!.gitconfig
+!.gitignore_global
+!.vimrc
+!.vim/
+!.tmux.conf
+!.screenrc
+!.inputrc
+!.editorconfig
+
+# Include .config directory
+!.config/
+
+# Don't ignore this .gitignore file
+!.gitignore
+
+# ============================================
+# Ignore history and cache files
+# ============================================
+.bash_history
+.python_history
+.viminfo
+.lesshst
+.zcompdump
+.zcompcache
+.claude.json
+.claude.json.backup
+.CFUserTextEncoding
+
+# ============================================
+# Ignore environment files with secrets and tokens
+# ============================================
+.zsh.env
+.bash.env
+.env
+.env.local
+*.env
+!.zsh.env.example
+!.bash.env.example
+
+# ============================================
+# Ignore system and cache files
+# ============================================
+.DS_Store
+**/.DS_Store
+*.swp
+*.swo
+*~
+*.orig
+
+# ============================================
+# Ignore files in .config/
+# ============================================
+
+# Log files
+.config/**/*.log
+
+# Backup files
+.config/**/*.bak
+.config/**/*.backup
+.config/**/automatic_backups/
+
+# Build artifacts and compiled binaries
+.config/**/bin/
+.config/**/*.o
+.config/**/*.so
+.config/**/*.dylib
+.config/**/*.map
+.config/**/*.js.map
+
+# Node modules
+.config/**/node_modules/
+
+# Karabiner automatic backups
+.config/karabiner/automatic_backups/
+
+# Terraform versions (downloaded binaries)
+.config/tfenv/versions/
+
+# Raycast extension build artifacts
+.config/raycast/extensions/**/*.js.map
+
+# Sketchybar compiled binaries
+.config/sketchybar/helpers/**/bin/
+.config/sketchybar/helpers/menus/bin/
+
+# ============================================
+# Ignore sensitive files
+# ============================================
+*.key
+*.pem
+*.p12
+*.cert
+id_rsa
+id_ed25519
+*.env
+.env
+**/.env.local
+**/.env.*.local
+
+# ============================================
+# Ignore temporary and cache files
+# ============================================
+*.tmp
+*.temp
+*.cache
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.class
