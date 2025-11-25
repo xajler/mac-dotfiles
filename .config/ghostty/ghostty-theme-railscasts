@@ -1,0 +1,36 @@
+# Railscasts-inspired Ghostty theme
+# Palette based on the classic Railscasts editor colorscheme
+
+background = #2b2b2b
+foreground = #00cc00
+
+cursor-color = #ffc66d
+cursor-text = #2b2b2b
+
+selection-background = #3a4055
+selection-foreground = #e6e1dc
+
+# black
+palette = 0=#2b2b2b
+palette = 8=#5a647e
+# red
+palette = 1=#da4939
+palette = 9=#cc7833
+# green
+palette = 2=#a5c261
+palette = 10=#b8d36a
+# yellow
+palette = 3=#ffc66d
+palette = 11=#ffd580
+# blue
+palette = 4=#6d9cbe
+palette = 12=#8aa5c9
+# purple
+palette = 5=#b6b3eb
+palette = 13=#c6c3f5
+# aqua
+palette = 6=#519f50
+palette = 14=#7ac17b
+# white
+palette = 7=#e6e1dc
+palette = 15=#f9f7f3
