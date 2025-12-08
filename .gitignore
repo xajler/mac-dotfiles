@@ -89,8 +89,9 @@
 # Terraform versions (downloaded binaries)
 .config/tfenv/versions/
 
-# Okta configuration (contains version info that changes)
+# Okta and roles configuration (contains version info that changes)
 .config/okta.cfg
+.config/roles.cfg
 
 # Raycast extensions (fully ignored)
 .config/raycast/extensions/
