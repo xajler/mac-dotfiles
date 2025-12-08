@@ -57,5 +57,5 @@ A collection of configuration files for my macOS setup, managed with Git.
 
 ## 📝 License
 
-[MIT](LICENSE)
+[GPLv3](LICENSE)
 
