@@ -180,15 +180,11 @@ local function show_details()
   end)
 end
 
--- Show details on hover
-wifi:subscribe("mouse.entered", show_details)
-wifi:subscribe("mouse.exited.global", hide_details)
-
 -- Double-click to open WiFi settings
 wifi:subscribe("mouse.clicked", function(env)
   local current_time = os.clock()
   local time_since_last_click = current_time - last_click_time
-  
+
   if time_since_last_click < double_click_delay then
     -- Double-click detected - open WiFi settings
     sbar.exec('open "x-apple.systempreferences:com.apple.preference.network"')

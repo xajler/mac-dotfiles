@@ -44,13 +44,13 @@ HISTSIZE=10000
 HISTFILE=~/.zsh_history
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
-setopt=appendhistory
-setopt=sharehistory
-setopt=hist_ignore_space
-setopt=hist_ignore_all_dups
-setopt=hist_save_no_dups
-setopt=hist_ignore_dups
-setopt=hist_find_no_dups
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
 
 # copmletino styling
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
@@ -84,7 +84,7 @@ export AWS_REGION=us-east-1
 export CLAUDE_CODE_MAX_OUTPUT_TOKENS=20480
 export MAX_THINKING_TOKENS=1024
 
-#export ANTHROPIC_MODEL='us.anthropic.claude-opus-4-1-20250805-v1:0'
+#export ANTHROPIC_MODEL='anthropic.claude-opus-4-5-20251101-v1:0'
 export ANTHROPIC_MODEL='us.anthropic.claude-sonnet-4-5-20250929-v1:0'
 export ANTHROPIC_SMALL_FAST_MODEL='us.anthropic.claude-3-5-haiku-20241022-v1:0'
 
@@ -110,7 +110,7 @@ alias ppp="pulumi package publish"
 alias pi="pulumi install"
 alias pr="pulumi refresh"
 alias put="pulumi-update-template"
-alias bu="brew update && brew upgrade --greedy && brew autoremove && brew cleanup" # && mas upgrade"
+alias bu="brew update && brew upgrade --greedy && brew autoremove && brew cleanup && brew services restart sketchybar" # && mas upgrade"
 
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
