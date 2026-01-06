@@ -4,7 +4,6 @@
 # Un-ignore these .config subdirectories
 !aerospace/
 !atuin/
-!borders/
 !fastfetch/
 !ghostty/
 !git/
@@ -17,6 +16,7 @@
 # Don't ignore this .gitignore file
 !.gitignore
 !KEYBINDINGS.md
+!brew-packages.txt
 
 # ============================================
 # Ignore history and cache files

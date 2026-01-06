@@ -1,0 +1,88 @@
+# Homebrew Packages
+# Generated: 2026-01-06
+#
+# This list contains only explicitly installed packages (not dependencies).
+# Dependencies will be automatically installed when you install these packages.
+# 
+# To reinstall all packages:
+#   brew install $(cat brew-packages.txt | grep -v "^#" | grep -v "^$" | grep -v "^## ")
+#
+# Or use Homebrew Bundle (recommended):
+#   brew bundle dump --file=Brewfile
+#   brew bundle install --file=Brewfile
+
+## Formulae (35 packages - explicitly installed, no dependencies)
+
+atuin
+awscli
+bat
+bchunk
+cmake
+cuetools
+direnv
+eza
+fastfetch
+felixkratz/formulae/sketchybar
+fzf
+go
+hdf5
+jq
+lapack
+lua
+mac
+mpv
+neovim
+node
+node@22
+ollama
+pipx
+poppler
+pulumi
+r
+shntool
+surrealdb/tap/surreal
+terraform
+tesseract-lang
+tfenv
+uv
+wget
+zellij
+zoxide
+
+## Casks (35 applications)
+
+aerospace
+calendar-366
+cursor
+docker-desktop
+font-arial
+font-fira-code-nerd-font
+font-hack-nerd-font
+font-hasklug-nerd-font
+font-jetbrains-mono-nerd-font
+font-sf-mono
+font-sf-pro
+font-ubuntu
+ghostty
+google-chrome
+iina
+karabiner-elements
+keepassxc
+kiro
+libreoffice
+microsoft-auto-update
+microsoft-teams
+musicbrainz-picard
+proton-drive
+proton-mail-bridge
+proton-pass
+protonvpn
+raycast
+rstudio
+sf-symbols
+slack
+transmission
+visual-studio-code
+wezterm
+zen
+zoom
