@@ -14,7 +14,6 @@ A collection of configuration files for my macOS setup, managed with Git.
   - Custom Lua configuration.
   - Dynamic workspace indicators with pastel colors.
   - Widgets: CPU, RAM, Battery, Volume, WiFi (with WAN IP), Brew updates.
-- **[JankyBorders](https://github.com/FelixKratz/JankyBorders)**: Active window borders (`.config/borders/`).
 
 ### Terminal & Shell
 - **Zsh**: Shell configuration (`.zshrc`, `.zprofile`, `.zshenv`).
