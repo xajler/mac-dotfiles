@@ -19,8 +19,13 @@ A collection of configuration files for my macOS setup, managed with Git.
 ### Terminal & Shell
 - **Zsh**: Shell configuration (`.zshrc`, `.zprofile`, `.zshenv`).
   - **Powerlevel10k**: Theme configuration (`.p10k.zsh`).
+  - **Modern CLI tools**: bat (cat), eza (ls), atuin (history), direnv (env management).
   - **Ghostty**: Terminal emulator configuration (`.config/ghostty/`).
     - Custom shaders and themes.
+- **Tmux**: Terminal multiplexer (`.tmux.conf`).
+  - Session management with auto-save/restore
+  - Smart session switcher with fzf
+  - 3-window project layout (shell, claude, nvim)
 - **Fastfetch**: System information fetch tool (`.config/fastfetch/`).
 - **Git**: Global git configuration (`.config/git/`).
 - **TFEnv**: Terraform version manager configuration (`.config/tfenv/`).
@@ -28,6 +33,16 @@ A collection of configuration files for my macOS setup, managed with Git.
 ### Utilities
 - **Raycast**: Productivity tool extensions and scripts (`.config/raycast/`).
 - **Karabiner Elements**: Keyboard customization (`.config/karabiner/`).
+
+## ⌨️ Keybindings
+
+Quick access to keyboard shortcuts:
+- [Shell (Zsh) keybindings](KEYBINDINGS.md#shell-zsh) - Terminal navigation, history, editing
+- [Tmux keybindings](KEYBINDINGS.md#tmux-terminal-multiplexer) - Session management, window switching
+- [Aerospace keybindings](KEYBINDINGS.md#window-manager-aerospace) - Window management, workspaces, layouts
+- [Service mode](KEYBINDINGS.md#service-mode) - Advanced window operations
+
+Full reference: [KEYBINDINGS.md](KEYBINDINGS.md)
 
 ## 🚀 Setup
 
@@ -40,20 +55,46 @@ A collection of configuration files for my macOS setup, managed with Git.
    # git pull origin master
    ```
 
-2. **Environment Variables:**
-   Copy the example environment file and add your secrets (tokens, keys):
+2. **Secrets Management:**
+   Create a `.zsh.env` file for private aliases and secrets (ignored by git):
    ```bash
-   cp .zsh.env.example .zsh.env
-   nano .zsh.env
+   cp .zsh.env.example .zsh.env  # If example exists, or create manually
+   nano ~/.zsh.env
    ```
-   *Note: `.zsh.env` is ignored by git to keep secrets safe.*
+
+   Secrets are stored in macOS Keychain for security. See [Security](#-security) section below.
+
+   *Note: `.zsh.env` is gitignored to keep your private settings safe.*
 
 ## 📂 Structure
 
 - `.config/`: Application configurations.
-- `.zshrc`: Main shell configuration.
-- `.zsh.env`: Secrets and tokens (not tracked).
+- `.zshrc`: Main shell configuration with Keychain integration.
+- `.zsh.env`: Private aliases and settings (not tracked).
+- `.tmux.conf`: Tmux configuration with session persistence.
 - `.gitignore`: Custom ignore rules for dotfiles management.
+
+## 🔐 Security
+
+Sensitive data (API tokens, credentials) is stored in macOS Keychain, not in plain text files. The `.zsh.env` file loads these secrets on shell startup.
+
+### Adding Secrets to Keychain
+
+To store a new secret:
+```bash
+security add-generic-password -a "$USER" -s "SECRET_NAME" -w "your-secret-value"
+```
+
+Then add to your `.zsh.env`:
+```bash
+export SECRET_NAME=$(security find-generic-password -a "$USER" -s "SECRET_NAME" -w 2>/dev/null)
+```
+
+**Benefits:**
+- Secrets encrypted by macOS Keychain
+- No plain text tokens in dotfiles
+- Safe to commit `.zshrc` to public repos
+- Private settings stay in gitignored `.zsh.env`
 
 ## 📝 License
 

@@ -21,7 +21,12 @@ zinit light Aloxaf/fzf-tab
 zinit snippet OMZP::git
 # check for. sudo aws command-not-found
 
-autoload -U compinit && compinit
+autoload -Uz compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then
+  compinit
+else
+  compinit -C
+fi
 
 zinit cdreplay -q
 
@@ -38,6 +43,10 @@ zinit cdreplay -q
 bindkey -e
 bindkey '^p' history-search-backward
 bindkey '^n' history-search-forward
+bindkey '\e.' insert-last-word  # Alt+. to insert last argument
+autoload -z edit-command-line
+zle -N edit-command-line
+bindkey '^x^e' edit-command-line  # Ctrl+x Ctrl+e to edit command in $EDITOR
 
 # history
 HISTSIZE=10000
@@ -56,6 +65,9 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
+zstyle ':completion:*' completer _complete _match _approximate
+zstyle ':completion:*' verbose yes
+zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':fzf-tab:*' fzf-flags '--height=70%'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
@@ -76,7 +88,7 @@ export GO111MODULE=on
 export VISUAL="nvim"
 export GIT_EDITOR=nvim
 
-# Load environment variables and secrets (not tracked in git)
+# Load private aliases, settings, and secrets (not tracked in git)
 [[ -f ~/.zsh.env ]] && source ~/.zsh.env
 
 export CLAUDE_CODE_USE_BEDROCK=1
@@ -92,11 +104,21 @@ export PATH=/opt/homebrew/bin:$GOBIN:$PATH
 
 alias du="du -sh"
 alias df="df -h"
-alias la='lsd -al'
 alias v='nvim'
 alias zs='source ~/.zshrc'
 alias c='clear'
 alias nf='clear && fastfetch'
+
+# git
+alias gst='git status -sb'
+alias glog='git log --oneline --decorate --graph --all'
+alias gundo='git reset --soft HEAD~1'
+
+# modern cli tools
+alias cat='bat --style=plain'
+alias ls='eza --icons --git'
+alias ll='eza -l --icons --git'
+alias la='eza -la --icons --git'
 
 #pulumi
 alias pss="pulumi stack select"
@@ -114,6 +136,34 @@ alias bu="brew update && brew upgrade --greedy && brew autoremove && brew cleanu
 
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
+
+# Initialize direnv
+eval "$(direnv hook zsh)"
+
+# Initialize atuin (advanced shell history)
+eval "$(atuin init zsh)"
+
+# Zellij session manager
+zm() {
+  if [ $1 ]; then
+    local session_name="$1"
+    local start_dir="${2:-$PWD}"  # Use provided dir or current dir
+
+    # Change to the target directory first
+    builtin cd "$start_dir"
+
+    # Attach to session (creates if doesn't exist)
+    zellij attach --create "$session_name"
+    return
+  fi
+  # Interactive session picker with fzf
+  session=$(zellij list-sessions 2>/dev/null | fzf --exit-0) && zellij attach "$session" || echo "No sessions found."
+}
+
+# Quick project session aliases
+alias tmd='zm dotfiles ~'
+alias tml='zellij list-sessions'
+alias tmk='zellij delete-session'  # Kill session: tmk session-name
 
 # Initialize zoxide (must be at the end)
 eval "$(zoxide init --cmd cd zsh)"
