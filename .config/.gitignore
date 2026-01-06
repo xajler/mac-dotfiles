@@ -16,6 +16,7 @@
 
 # Don't ignore this .gitignore file
 !.gitignore
+!KEYBINDINGS.md
 
 # ============================================
 # Ignore history and cache files
