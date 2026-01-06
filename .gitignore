@@ -60,46 +60,6 @@
 *.orig
 
 # ============================================
-# Ignore files in .config/
-# ============================================
-
-# Log files
-.config/**/*.log
-
-# Backup files
-.config/**/*.bak
-.config/**/*.backup
-.config/**/automatic_backups/
-
-# Build artifacts and compiled binaries
-.config/**/bin/
-.config/**/*.o
-.config/**/*.so
-.config/**/*.dylib
-.config/**/*.map
-.config/**/*.js.map
-
-# Node modules
-.config/**/node_modules/
-
-# Karabiner automatic backups
-.config/karabiner/automatic_backups/
-
-# Terraform versions (downloaded binaries)
-.config/tfenv/versions/
-
-# Okta and roles configuration (contains version info that changes)
-.config/okta.cfg
-.config/roles.cfg
-
-# Raycast extensions (fully ignored)
-.config/raycast/extensions/
-
-# Sketchybar compiled binaries
-.config/sketchybar/helpers/**/bin/
-.config/sketchybar/helpers/menus/bin/
-
-# ============================================
 # Ignore sensitive files
 # ============================================
 *.key
