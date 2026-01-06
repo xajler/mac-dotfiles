@@ -25,7 +25,6 @@ exec-on-workspace-change = [
   '/bin/bash',
   '-c',
   'sketchybar --trigger aerospace_workspace_change FOCUSED_WORKSPACE=$AEROSPACE_FOCUSED_WORKSPACE FOCUSED_DISPLAY=$(aerospace list-monitors --focused | awk "{print $1}")',
-  'exec-and-forget ~/.config/aerospace/scripts/dump_env.sh',
 ]
 
 # Notify Sketchybar about focuse change∂
@@ -106,8 +105,6 @@ outer.right = 0
 # See: https://nikitabobko.github.io/AeroSpace/commands#exec-and-forget
 alt-enter = 'exec-and-forget open -n /Applications/WezTerm.app'
 ctrl-enter = 'exec-and-forget open -n /Applications/Ghostty.app'
-
-alt-w = 'exec-and-forget open -b app.zen-browser.zen'
 
 # See: https://nikitabobko.github.io/AeroSpace/goodness#open-a-new-window-with-applescript
 #alt-t = 'exec-and-forget wezterm start'
@@ -225,27 +222,6 @@ run = "layout floating"
 [[on-window-detected]]
 if.app-name-regex-substring = '^wezterm-gui$'
 run = 'move-node-to-workspace 1'
-
-[[on-window-detected]]
-if.app-id = 'company.thebrowser.Browser'
-run = 'move-node-to-workspace 2'
-
-[[on-window-detected]]
-if.app-id = 'com.todesktop.230313mzl4w4u92'
-run = 'move-node-to-workspace 3'
-
-[[on-window-detected]]
-if.app-id = 'com.jetbrains.intellij'
-run = 'move-node-to-workspace 3'
-
-
-[[on-window-detected]]
-if.app-id = 'ru.keepcoder.Telegram'
-run = 'move-node-to-workspace 9'
-
-[[on-window-detected]]
-if.app-id = 'net.whatsapp.WhatsApp'
-run = 'move-node-to-workspace 9'
 
 [[on-window-detected]]
 if.app-id = 'app.zen-browser.zen'
