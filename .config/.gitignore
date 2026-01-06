@@ -1,4 +1,4 @@
-# Ignore everything by default
+# Ignore everything by default inside .config/
 /*
 
 # Un-ignore these .config subdirectories
@@ -13,70 +13,44 @@
 !wezterm/
 !zellij/
 
-# Don't ignore this .gitignore file
+# Un-ignore these files in .config root
 !.gitignore
 !KEYBINDINGS.md
 !brew-packages.txt
 
 # ============================================
-# Ignore history and cache files
-# ============================================
-.bash_history
-.python_history
-.viminfo
-.lesshst
-.zcompdump
-.zcompcache
-.claude.json
-.claude.json.backup
-.CFUserTextEncoding
-
-# ============================================
-# Ignore system and cache files
-# ============================================
-.DS_Store
-**/.DS_Store
-*.swp
-*.swo
-*~
-*.orig
-
-# ============================================
-# Ignore files in .config/
+# Config-specific ignores
 # ============================================
 
-# Log files
-.config/**/*.log
-
-# Backup files
-.config/**/*.bak
-.config/**/*.backup
-.config/**/automatic_backups/
+# Log and backup files
+**/*.log
+**/*.bak
+**/*.backup
 
 # Build artifacts and compiled binaries
-.config/**/bin/
-.config/**/*.o
-.config/**/*.so
-.config/**/*.dylib
-.config/**/*.map
-.config/**/*.js.map
+**/bin/
+**/*.o
+**/*.so
+**/*.dylib
+**/*.map
+**/*.js.map
 
 # Node modules
-.config/**/node_modules/
+**/node_modules/
 
 # Karabiner automatic backups
-.config/karabiner/automatic_backups/
+karabiner/automatic_backups/
 
 # Terraform versions (downloaded binaries)
-.config/tfenv/versions/
-.config/tfenv/
+tfenv/versions/
+tfenv/
 
 # Raycast extension build artifacts
-.config/raycast/extensions/**/*.js.map
+raycast/extensions/**/*.js.map
 
 # Sketchybar compiled binaries
-.config/sketchybar/helpers/**/bin/
-.config/sketchybar/helpers/menus/bin/
+sketchybar/helpers/**/bin/
+sketchybar/helpers/menus/bin/
 
 # Zellij plugins (downloaded binaries)
 zellij/plugins/*.wasm
@@ -84,30 +58,3 @@ zellij/plugins/*.wasm
 # NvChad - managed separately as its own git repository
 nvim/.git/
 nvim/lazy-lock.json
-
-# ============================================
-# Ignore sensitive files
-# ============================================
-.zsh.env # Ignore the actual secrets file
-*.key
-*.pem
-*.p12
-*.cert
-id_rsa
-id_ed25519
-*.env
-.env
-**/.env.local
-**/.env.*.local
-
-# ============================================
-# Ignore temporary and cache files
-# ============================================
-*.tmp
-*.temp
-*.cache
-**/__pycache__/
-**/*.pyc
-**/*.pyo
-**/*.class
-
