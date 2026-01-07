@@ -36,12 +36,12 @@ A collection of configuration files for my macOS setup, managed with Git.
 ## ⌨️ Keybindings
 
 Quick access to keyboard shortcuts:
-- [Shell (Zsh) keybindings](KEYBINDINGS.md#shell-zsh) - Terminal navigation, history, editing
-- [Tmux keybindings](KEYBINDINGS.md#tmux-terminal-multiplexer) - Session management, window switching
-- [Aerospace keybindings](KEYBINDINGS.md#window-manager-aerospace) - Window management, workspaces, layouts
-- [Service mode](KEYBINDINGS.md#service-mode) - Advanced window operations
+- [Shell (Zsh) keybindings](.config/KEYBINDINGS.md#shell-zsh) - Terminal navigation, history, editing
+- [Tmux keybindings](.config/KEYBINDINGS.md#tmux-terminal-multiplexer) - Session management, window switching
+- [Aerospace keybindings](.config/KEYBINDINGS.md#window-manager-aerospace) - Window management, workspaces, layouts
+- [Service mode](.config/KEYBINDINGS.md#service-mode) - Advanced window operations
 
-Full reference: [KEYBINDINGS.md](KEYBINDINGS.md)
+Full reference: [.config/KEYBINDINGS.md](.config/KEYBINDINGS.md)
 
 ## 🚀 Setup
 
@@ -55,6 +55,7 @@ Full reference: [KEYBINDINGS.md](KEYBINDINGS.md)
    ```
 
 2. **Secrets Management:**
+
 
    Create or copy `.zsh.env` file for private aliases and secrets (ignored by git):
 
