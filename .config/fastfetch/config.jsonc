@@ -10,7 +10,7 @@
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
+      "format": "\u001b[90m┌──────────────────────────Hardware──────────────────────────┐"
     },
     {
       "type": "host",
@@ -51,16 +51,16 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+      "format": "\u001b[90m└────────────────────────────────────────────────────────────┘"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
+      "format": "\u001b[90m┌──────────────────────────Software──────────────────────────┐"
     },
     {
       "type": "os",
-      "key": " OS",
+      "key": " OS",
       "keyColor": "yellow"
     },
     {
@@ -85,9 +85,10 @@
       "keyColor": "blue"
     },
     {
-      "type": "wm",
+      "type": "command",
       "key": "│ ├",
-      "keyColor": "blue"
+      "keyColor": "blue",
+      "text": "pgrep -q AeroSpace && echo \"AeroSpace $(aerospace --version 2>&1 | head -1 | awk '{print $5}')\" || echo 'Quartz Compositor'"
     },
     {
       "type": "wmtheme",
@@ -110,18 +111,19 @@
       "keyColor": "blue"
     },
     {
-      "type": "terminal",
+      "type": "command",
       "key": "└ └",
-      "keyColor": "blue"
+      "keyColor": "blue",
+      "text": "if pgrep -q wezterm-gui; then WT_VER=$(wezterm --version 2>/dev/null | awk '{print $2}'); TERM=\"WezTerm $WT_VER\"; if pgrep -q zellij; then ZJ_VER=$(zellij --version 2>/dev/null | awk '{print $2}'); TERM=\"$TERM + Zellij $ZJ_VER\"; fi; else TERM=\"$(basename \"$TERM_PROGRAM\")\"; fi; echo \"$TERM\""
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+      "format": "\u001b[90m└────────────────────────────────────────────────────────────┘"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m┌────────────────────Uptime / Age────────────────────┐"
+      "format": "\u001b[90m┌────────────────────────Uptime / Age────────────────────────┐"
     },
     {
       "type": "command",
@@ -136,7 +138,7 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+      "format": "\u001b[90m└────────────────────────────────────────────────────────────┘"
     },
     "break"
   ]
