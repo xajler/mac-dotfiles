@@ -116,9 +116,9 @@ alias gundo='git reset --soft HEAD~1'
 
 # modern cli tools
 alias cat='bat --style=plain'
-alias ls='eza --icons --git'
-alias ll='eza -l --icons --git'
-alias la='eza -la --icons --git'
+alias ls='eza --icons --git --ignore-glob=".DS_Store"'
+alias ll='eza -l --icons --git --ignore-glob=".DS_Store"'
+alias la='eza -la --icons --git --ignore-glob=".DS_Store"'
 
 #pulumi
 alias pss="pulumi stack select"
