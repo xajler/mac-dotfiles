@@ -4,6 +4,33 @@ Complete keyboard shortcuts for all tools in the dotfiles setup.
 
 ---
 
+## 🐚 Shell (Zsh)
+
+### Navigation & Editing
+| Key | Action |
+|-----|--------|
+| `Ctrl+a` | Jump to start of line |
+| `Ctrl+e` | Jump to end of line |
+| `Ctrl+b` | Move backward one character |
+| `Ctrl+f` | Move forward one character (also accepts autosuggestion) |
+| `Alt+.` | Insert last argument from previous command |
+| `Ctrl+x Ctrl+e` | Edit current command in `$EDITOR` (nvim) |
+
+### History
+| Key | Action |
+|-----|--------|
+| `Ctrl+p` | Search backward in history |
+| `Ctrl+n` | Search forward in history |
+| `Ctrl+r` | Fuzzy search history (atuin/fzf) |
+
+### FZF Navigation (when in fzf prompt)
+| Key | Action |
+|-----|--------|
+| `Ctrl+p` | Previous item in list |
+| `Ctrl+n` | Next item in list |
+
+---
+
 ## 🪟 Aerospace (Window Manager)
 
 ### Launch Applications
