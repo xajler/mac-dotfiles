@@ -81,16 +81,9 @@ config.quit_when_all_windows_are_closed = true
 
 -- Keybindings
 config.keys = {
-  -- Cmd+1-9: Send Ctrl+Space then number for Zellij tab switching
-  { key = '1', mods = 'CMD', action = wezterm.action.SendString('\x001') },
-  { key = '2', mods = 'CMD', action = wezterm.action.SendString('\x002') },
-  { key = '3', mods = 'CMD', action = wezterm.action.SendString('\x003') },
-  { key = '4', mods = 'CMD', action = wezterm.action.SendString('\x004') },
-  { key = '5', mods = 'CMD', action = wezterm.action.SendString('\x005') },
-  { key = '6', mods = 'CMD', action = wezterm.action.SendString('\x006') },
-  { key = '7', mods = 'CMD', action = wezterm.action.SendString('\x007') },
-  { key = '8', mods = 'CMD', action = wezterm.action.SendString('\x008') },
-  { key = '9', mods = 'CMD', action = wezterm.action.SendString('\x009') },
+  -- Cmd+[ and Cmd+] for prev/next tab
+  { key = '[', mods = 'CMD', action = wezterm.action.SendKey { key = 'p', mods = 'ALT' } },
+  { key = ']', mods = 'CMD', action = wezterm.action.SendKey { key = 'n', mods = 'ALT' } },
 
   -- Reload config
   { key = 'r', mods = 'CMD', action = wezterm.action.ReloadConfiguration },

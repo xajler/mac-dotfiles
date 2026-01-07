@@ -157,18 +157,7 @@ keybinds clear-defaults=true {
         bind "Alt o" { MoveTab "right"; }
         bind "Ctrl q" { Detach; }
 
-        // Tab switching with Ctrl+Space + number (for Cmd+number via Ghostty)
-        bind "Ctrl Space" "1" { GoToTab 1; }
-        bind "Ctrl Space" "2" { GoToTab 2; }
-        bind "Ctrl Space" "3" { GoToTab 3; }
-        bind "Ctrl Space" "4" { GoToTab 4; }
-        bind "Ctrl Space" "5" { GoToTab 5; }
-        bind "Ctrl Space" "6" { GoToTab 6; }
-        bind "Ctrl Space" "7" { GoToTab 7; }
-        bind "Ctrl Space" "8" { GoToTab 8; }
-        bind "Ctrl Space" "9" { GoToTab 9; }
-
-        // Quick tab switching (no conflicts)
+        // Quick tab switching (Alt+n/p, or Cmd+[/] via WezTerm)
         bind "Alt n" { GoToNextTab; }
         bind "Alt p" { GoToPreviousTab; }
     }
