@@ -55,6 +55,7 @@ Full reference: [KEYBINDINGS.md](KEYBINDINGS.md)
    ```
 
 2. **Secrets Management:**
+
    Create or copy `.zsh.env` file for private aliases and secrets (ignored by git):
 
    Secrets are stored in macOS Keychain for security. See [Security](#-security) section below.
