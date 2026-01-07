@@ -36,10 +36,9 @@ A collection of configuration files for my macOS setup, managed with Git.
 ## ⌨️ Keybindings
 
 Quick access to keyboard shortcuts:
-- [Shell (Zsh) keybindings](.config/KEYBINDINGS.md#shell-zsh) - Terminal navigation, history, editing
-- [Tmux keybindings](.config/KEYBINDINGS.md#tmux-terminal-multiplexer) - Session management, window switching
-- [Aerospace keybindings](.config/KEYBINDINGS.md#window-manager-aerospace) - Window management, workspaces, layouts
-- [Service mode](.config/KEYBINDINGS.md#service-mode) - Advanced window operations
+- [Aerospace keybindings](.config/KEYBINDINGS.md#-aerospace-window-manager) - Window management, workspaces, layouts, service mode
+- [WezTerm keybindings](.config/KEYBINDINGS.md#-wezterm-terminal-emulator) - Terminal emulator shortcuts
+- [Zellij keybindings](.config/KEYBINDINGS.md#-zellij-terminal-multiplexer) - Session management, tab/pane navigation
 
 Full reference: [.config/KEYBINDINGS.md](.config/KEYBINDINGS.md)
 
