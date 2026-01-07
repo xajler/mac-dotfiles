@@ -3,12 +3,26 @@ layout {
         pane size=1 borderless=true {
             plugin location="file:~/.config/zellij/plugins/zjstatus.wasm" {
                 format_left   "#[bg=#000000]{tabs}"
-                format_center "#[bg=#000000]"
+                format_center "#[bg=#000000]{mode}"
                 format_right  "#[bg=#000000]{session}"
                 format_space  "#[bg=#000000]"
 
                 tab_normal   "#[bg=#000000,fg=#a7cfbd] {name} "
                 tab_active   "#[bg=#000000,fg=#00ff41,bold] {name} "
+
+                mode_normal  "#[bg=#000000,fg=#505e62] NORMAL "
+                mode_locked  "#[bg=#da858e,fg=#000000,bold] LOCKED "
+                mode_resize  "#[bg=#dab183,fg=#000000,bold] RESIZE "
+                mode_pane    "#[bg=#a3b8c6,fg=#000000,bold] PANE "
+                mode_tab     "#[bg=#00ff41,fg=#000000,bold] TAB "
+                mode_scroll  "#[bg=#c0aed2,fg=#000000,bold] SCROLL "
+                mode_enter_search "#[bg=#c0aed2,fg=#000000,bold] SEARCH "
+                mode_search  "#[bg=#c0aed2,fg=#000000,bold] SEARCH "
+                mode_rename_tab "#[bg=#a7cfbd,fg=#000000,bold] RENAME "
+                mode_rename_pane "#[bg=#a7cfbd,fg=#000000,bold] RENAME "
+                mode_session "#[bg=#b7ce97,fg=#000000,bold] SESSION "
+                mode_move    "#[bg=#dab183,fg=#000000,bold] MOVE "
+                mode_tmux    "#[bg=#a3b8c6,fg=#000000,bold] TMUX "
             }
         }
         children

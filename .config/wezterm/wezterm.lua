@@ -101,7 +101,9 @@ config.keys = {
   { key = 'k', mods = 'CTRL', action = wezterm.action.ClearScrollback('ScrollbackAndViewport') },
 
   -- Copy/Paste
-  { key = 'c', mods = 'CTRL|SHIFT', action = wezterm.action.CopyTo('Clipboard') },
+  { key = 'c', mods = 'CMD', action = wezterm.action.CopyTo('ClipboardAndPrimarySelection') },
+  { key = 'v', mods = 'CMD', action = wezterm.action.PasteFrom('Clipboard') },
+  { key = 'c', mods = 'CTRL|SHIFT', action = wezterm.action.CopyTo('ClipboardAndPrimarySelection') },
   { key = 'v', mods = 'CTRL|SHIFT', action = wezterm.action.PasteFrom('Clipboard') },
 
   -- Shift+Enter sends newline
