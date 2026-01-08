@@ -4,30 +4,57 @@ Complete keyboard shortcuts for all tools in the dotfiles setup.
 
 ---
 
-## 🐚 Shell (Zsh)
+## 🐚 Shell (Zsh) - Emacs Mode
 
-### Navigation & Editing
+### Cursor Movement
 | Key | Action |
 |-----|--------|
-| `Ctrl+a` | Jump to start of line |
-| `Ctrl+e` | Jump to end of line |
-| `Ctrl+b` | Move backward one character |
-| `Ctrl+f` | Move forward one character (also accepts autosuggestion) |
-| `Alt+.` | Insert last argument from previous command |
-| `Ctrl+x Ctrl+e` | Edit current command in `$EDITOR` (nvim) |
+| `Ctrl+a` | Jump to **start** of line |
+| `Ctrl+e` | Jump to **end** of line |
+| `Ctrl+b` | Move **backward** one character |
+| `Ctrl+f` | Move **forward** one character (also accepts autosuggestion) |
+| `Alt+b` | Move backward one **word** |
+| `Alt+f` | Move forward one **word** |
+
+### Editing (Cut/Paste)
+| Key | Action |
+|-----|--------|
+| `Ctrl+k` | **Kill** (cut) from cursor to end of line |
+| `Ctrl+u` | Kill from cursor to **start** of line |
+| `Ctrl+w` | Kill **word** backward |
+| `Alt+d` | Kill word forward |
+| `Ctrl+y` | **Yank** (paste) last killed text |
+| `Ctrl+d` | Delete character under cursor (or EOF if empty) |
+| `Ctrl+h` | Delete character before cursor (backspace) |
+| `Ctrl+t` | **Transpose** (swap) characters |
+| `Alt+t` | Transpose words |
 
 ### History
 | Key | Action |
 |-----|--------|
-| `Ctrl+p` | Search backward in history |
-| `Ctrl+n` | Search forward in history |
-| `Ctrl+r` | Fuzzy search history (atuin/fzf) |
+| `Ctrl+r` | **Atuin** fuzzy search history |
+| `Up/Down` | Navigate history |
+| `Ctrl+p` | Previous history entry |
+| `Ctrl+n` | Next history entry |
+| `Alt+.` | Insert **last argument** from previous command |
+| `Ctrl+x Ctrl+e` | Edit current command in `$EDITOR` (nvim) |
 
-### FZF Navigation (when in fzf prompt)
+### Misc
 | Key | Action |
 |-----|--------|
-| `Ctrl+p` | Previous item in list |
-| `Ctrl+n` | Next item in list |
+| `Ctrl+l` | Clear screen (keeps scrollback) |
+| `Ctrl+c` | Cancel current command |
+| `Ctrl+z` | Suspend current process (use `fg` to resume) |
+| `Tab` | Autocomplete (fzf-tab) |
+
+### FZF/Atuin Navigation (when in picker)
+| Key | Action |
+|-----|--------|
+| `Ctrl+p` / `Up` | Previous item |
+| `Ctrl+n` / `Down` | Next item |
+| `Enter` | Select and execute |
+| `Tab` | Select and edit |
+| `Esc` | Cancel |
 
 ---
 
@@ -74,18 +101,26 @@ Complete keyboard shortcuts for all tools in the dotfiles setup.
 
 ## 💻 WezTerm (Terminal Emulator)
 
-### Config & Inspector
-- `Cmd + R` or `Ctrl + R` → Reload configuration
-- `Cmd + I` or `Ctrl + I` → Toggle inspector
+### Zellij Integration (sent to Zellij)
+| Key | Action |
+|-----|--------|
+| `Cmd+1` | Switch to tab 1 (shell) |
+| `Cmd+2` | Switch to tab 2 (claude) |
+| `Cmd+3` | Switch to tab 3 (nvim) |
+| `Cmd+[` | Previous tab |
+| `Cmd+]` | Next tab |
+| `Cmd+d` | Split pane vertically (side by side) |
 
-### Screen & Clipboard
-- `Cmd + K` or `Ctrl + K` → Clear screen and scrollback
-- `Ctrl + Shift + C` → Copy to clipboard
-- `Ctrl + Shift + V` → Paste from clipboard
-- `Shift + Enter` → Insert newline
-
-### Zellij Tab Switching (via WezTerm)
-- `Cmd + 1-9` → Switch to Zellij tab 1-9 (sends Ctrl+Space + number)
+### WezTerm Native
+| Key | Action |
+|-----|--------|
+| `Cmd+r` | Reload WezTerm config |
+| `Cmd+k` | Clear screen **and** scrollback (nuclear) |
+| `Cmd+c` | Copy selection to clipboard |
+| `Cmd+v` | Paste from clipboard |
+| `Ctrl+Shift+c` | Copy (alternative) |
+| `Ctrl+Shift+v` | Paste (alternative) |
+| `Shift+Enter` | Insert literal newline |
 
 **Note:** WezTerm auto-reloads configuration on file changes.
 
@@ -93,70 +128,54 @@ Complete keyboard shortcuts for all tools in the dotfiles setup.
 
 ## 🔲 Zellij (Terminal Multiplexer)
 
+Zellij runs in **locked mode** by default - all keys pass through to shell/nvim.
+
+### Always Available (even in locked mode)
+| Key | Action |
+|-----|--------|
+| `Cmd+1/2/3` | Switch to tab 1/2/3 (via WezTerm) |
+| `Cmd+[/]` | Previous/next tab (via WezTerm) |
+| `Cmd+d` | Split pane vertically (via WezTerm) |
+| `Ctrl+q` | **Detach** session (keeps it alive) |
+| `Ctrl+g` | **Unlock** Zellij (enter normal mode) |
+
+### Navigate Between Panes (after splitting)
+1. `Ctrl+g` → Unlock Zellij
+2. `Ctrl+p` → Enter pane mode
+3. `h/j/k/l` → Move left/down/up/right
+4. `Esc` → Exit pane mode (returns to normal, use `Ctrl+g` to re-lock)
+
 ### Session Management
-- `Ctrl + Q` → Detach from session (keeps it alive)
-- `zellij attach <name>` → Attach to existing session
-- `zellij delete-session <name>` → Delete session
+| Command | Action |
+|---------|--------|
+| `zm` | Interactive session picker (fzf) |
+| `zm <name> [dir]` | Create/attach to named session |
+| `tml` | List all sessions |
+| `tmk <name>` | Delete session |
+| `tmd` | Dotfiles session |
 
-### Session Aliases (from shell)
-- `tmd` → Dotfiles session (example)
-- `tml` → List all sessions
-- `tmk` → Delete session (prompts for name)
-- `zm` → Interactive session picker (with fzf)
-- `zm <name> [dir]` → Create/attach to named session
-
-**Note:** Add custom project aliases in `.zsh.env` (private, gitignored):
+**Tip:** Add custom project aliases in `.zsh.env`:
 ```bash
 alias tmp='zm pulumi ~/src/myproject'
-alias tmw='zm work ~/work'
 ```
 
-### Tab Navigation
-- `Cmd + 1-9` → Go to tab 1-9 (via WezTerm)
-- `Ctrl + Space` then `1-9` → Go to tab 1-9 (native)
-- `Alt + N` → Next tab
-- `Alt + P` → Previous tab
+### After Unlocking (Ctrl+g)
 
-### Pane Management
-Enter pane mode with `Ctrl + P`, then:
-- `N` → New pane (split horizontally)
-- `D` → New pane below (split vertically)
-- `R` → New pane to the right
-- `X` → Close current pane
-- `H/J/K/L` or Arrow keys → Navigate panes
-- `F` → Toggle fullscreen
-- `Z` → Toggle pane frames
-- `C` → Rename pane
-- `Esc` → Exit pane mode
+Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/locked.
 
-### Tab Management
-Enter tab mode with `Ctrl + T`, then:
-- `N` → New tab
-- `X` → Close current tab
-- `R` → Rename tab
-- `H/L` or Arrow keys → Navigate tabs
-- `Esc` → Exit tab mode
+**Pane Mode** (`Ctrl+p`):
+- `r` → Split right | `d` → Split down | `x` → Close pane
+- `h/j/k/l` → Navigate panes | `f` → Fullscreen
 
-### Resize Mode
-Enter resize mode with `Ctrl + N`, then:
-- `H/J/K/L` or Arrow keys → Resize panes
-- `+` or `=` → Increase size
-- `-` → Decrease size
-- `Esc` → Exit resize mode
+**Tab Mode** (`Ctrl+t`):
+- `n` → New tab | `x` → Close tab | `r` → Rename
+- `1-9` → Go to tab
 
-### Scroll Mode
-- `Ctrl + S` → Enter scroll mode
-- `J/K` or Arrow keys → Scroll up/down
-- `Ctrl + F` / `Ctrl + B` → Page down/up
-- `G` → Go to top
-- `Shift + G` → Go to bottom
-- `Esc` → Exit scroll mode
+**Resize Mode** (`Ctrl+n`):
+- `h/j/k/l` → Resize | `+/-` → Increase/decrease
 
-### Search Mode
-- `Ctrl + S` then `/` → Search forward
-- `Ctrl + S` then `?` → Search backward
-- `N` → Next match
-- `Shift + N` → Previous match
+**Scroll Mode** (`Ctrl+s`):
+- `j/k` → Scroll | `u/d` → Half page | `Ctrl+f/b` → Full page
 
 ---
 
@@ -251,37 +270,48 @@ Enter resize mode with `Ctrl + N`, then:
 
 ## 🎯 Quick Reference
 
-### Most Used Shortcuts
+### Daily Workflow
 
-**Launch Apps:**
-- Alt + Enter → WezTerm
-- Alt + W → Browser
-
-**Window Management:**
-- Alt + 1-9 → Switch workspace
-- Alt + H/N/T/S → Focus windows (Dvorak)
-- Alt + F → Fullscreen
+**Aerospace (Window Manager):**
+- `Alt+Enter` → Launch WezTerm
+- `Alt+1-9` → Switch workspace
+- `Alt+H/N/T/S` → Focus windows (Dvorak)
+- `Alt+F` → Fullscreen
 
 **Zellij:**
-- Cmd + 1-9 → Switch tabs
-- Ctrl + Q → Detach
-- zm → Session picker
+- `Cmd+1/2/3` → Switch tabs
+- `Cmd+d` → Split pane
+- `Ctrl+g` → `Ctrl+p` → `h/j/k/l` → Navigate panes
+- `Ctrl+q` → Detach session
+
+**Shell (Emacs):**
+- `Ctrl+r` → Atuin history search
+- `Ctrl+a/e` → Start/end of line
+- `Ctrl+k` → Kill to end of line
+- `Ctrl+y` → Yank (paste killed text)
+- `Ctrl+w` → Kill word backward
 
 **NvChad:**
-- Ctrl + N → File tree
-- Space + FF → Find files
-- Space + FW → Find word
-- GD → Go to definition
+- `Ctrl+n` → File tree
+- `Space+ff` → Find files
+- `Space+fw` → Find word
+- `gd` → Go to definition
+- `y` → Yank to clipboard
+
+**Copy/Paste:**
+- Shell: Select text (auto-copies) or `Cmd+c`
+- Nvim: Visual select + `y`
+- Paste anywhere: `Cmd+v`
 
 ---
 
 ## 📚 Notes
 
-- **Dvorak Layout**: Aerospace uses Dvorak layout mappings (H/N/T/S instead of H/J/K/L)
-- **WezTerm Auto-reload**: Configuration changes apply immediately
-- **Zellij Sessions**: Persist between terminal closures - use `Ctrl+Q` to detach, not close
-- **NvChad Leader**: `Space` key is the leader - most commands start with it
-- **macOS Conflicts**: Ctrl+Space conflict with input source switching was disabled in System Settings
+- **Zellij Locked Mode**: All `Ctrl+` keys pass to shell/nvim. Use `Ctrl+g` to unlock for Zellij commands.
+- **Dvorak Layout**: Aerospace uses H/N/T/S instead of H/J/K/L
+- **WezTerm Auto-reload**: `Cmd+r` or automatic on file changes
+- **Zellij Sessions**: Persist between terminal closures - `Ctrl+q` detaches, doesn't kill
+- **NvChad Leader**: `Space` key - most commands start with it
 
 ---
 

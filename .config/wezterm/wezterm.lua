@@ -85,13 +85,19 @@ config.keys = {
   { key = '[', mods = 'CMD', action = wezterm.action.SendKey { key = 'p', mods = 'ALT' } },
   { key = ']', mods = 'CMD', action = wezterm.action.SendKey { key = 'n', mods = 'ALT' } },
 
-  -- Reload config
-  { key = 'r', mods = 'CMD', action = wezterm.action.ReloadConfiguration },
-  { key = 'r', mods = 'CTRL', action = wezterm.action.ReloadConfiguration },
+  -- Zellij tab switching (Cmd+1/2/3 -> Alt+1/2/3, overrides WezTerm defaults)
+  { key = '1', mods = 'CMD', action = wezterm.action.SendKey { key = '1', mods = 'ALT' } },
+  { key = '2', mods = 'CMD', action = wezterm.action.SendKey { key = '2', mods = 'ALT' } },
+  { key = '3', mods = 'CMD', action = wezterm.action.SendKey { key = '3', mods = 'ALT' } },
 
-  -- Clear screen
+  -- Zellij split pane vertically (Cmd+d -> Alt+d)
+  { key = 'd', mods = 'CMD', action = wezterm.action.SendKey { key = 'd', mods = 'ALT' } },
+
+  -- Reload config (Cmd+r only, Ctrl+r reserved for shell/Atuin)
+  { key = 'r', mods = 'CMD', action = wezterm.action.ReloadConfiguration },
+
+  -- Clear screen (Cmd+k only, Ctrl+k reserved for shell emacs kill-line)
   { key = 'k', mods = 'CMD', action = wezterm.action.ClearScrollback('ScrollbackAndViewport') },
-  { key = 'k', mods = 'CTRL', action = wezterm.action.ClearScrollback('ScrollbackAndViewport') },
 
   -- Copy/Paste
   { key = 'c', mods = 'CMD', action = wezterm.action.CopyTo('ClipboardAndPrimarySelection') },
