@@ -96,9 +96,10 @@ export AWS_REGION=us-east-1
 export CLAUDE_CODE_MAX_OUTPUT_TOKENS=20480
 export MAX_THINKING_TOKENS=1024
 
-#export ANTHROPIC_MODEL='anthropic.claude-opus-4-5-20251101-v1:0'
+#export ANTHROPIC_MODEL=us.anthropic.claude-opus-4-5-20251101-v1:0
 export ANTHROPIC_MODEL='us.anthropic.claude-sonnet-4-5-20250929-v1:0'
-export ANTHROPIC_SMALL_FAST_MODEL='us.anthropic.claude-3-5-haiku-20241022-v1:0'
+export ANTHROPIC_SMALL_FAST_MODEL=us.anthropic.claude-haiku-4-5-20251001-v1:0
+#export ANTHROPIC_SMALL_FAST_MODEL='us.anthropic.claude-3-5-haiku-20241022-v1:0'
 
 export PATH=/opt/homebrew/bin:$GOBIN:$PATH
 

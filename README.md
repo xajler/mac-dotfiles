@@ -27,7 +27,6 @@ A collection of configuration files for my macOS setup, managed with Git.
   - 3-window project layout (shell, claude, nvim)
 - **Fastfetch**: System information fetch tool (`.config/fastfetch/`).
 - **Git**: Global git configuration (`.config/git/`).
-- **TFEnv**: Terraform version manager configuration (`.config/tfenv/`).
 
 ### Utilities
 - **Raycast**: Productivity tool extensions and scripts (`.config/raycast/`).
@@ -68,7 +67,6 @@ Full reference: [.config/KEYBINDINGS.md](.config/KEYBINDINGS.md)
 - `.config/`: Application configurations.
 - `.zshrc`: Main shell configuration with Keychain integration.
 - `.zsh.env`: Private aliases and settings (not tracked).
-- `.tmux.conf`: Tmux configuration with session persistence.
 - `.gitignore`: Custom ignore rules for dotfiles management.
 
 ## 🔐 Security
