@@ -23,18 +23,35 @@ return {
     end,
   },
 
+  -- JSON schemas for better JSON/YAML support
+  {
+    "b0o/schemastore.nvim",
+    lazy = true,
+  },
+
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
 
-  -- {
-  -- 	"nvim-treesitter/nvim-treesitter",
-  -- 	opts = {
-  -- 		ensure_installed = {
-  -- 			"vim", "lua", "vimdoc",
-  --      "html", "css"
-  -- 		},
-  -- 	},
-  -- },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = {
+      ensure_installed = {
+        "vim",
+        "lua",
+        "vimdoc",
+        "html",
+        "css",
+        "javascript",
+        "typescript",
+        "tsx",
+        "python",
+        "json",
+        "yaml",
+        "markdown",
+        "markdown_inline",
+      },
+    },
+  },
 
   -- Markdown preview
   {

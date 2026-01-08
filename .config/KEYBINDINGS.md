@@ -177,6 +177,11 @@ Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/lock
 **Scroll Mode** (`Ctrl+s`):
 - `j/k` → Scroll | `u/d` → Half page | `Ctrl+f/b` → Full page
 
+### Copy/Paste in Terminal
+- **Mouse selection**: Just select text with mouse → auto-copies to clipboard
+- **Note**: `mouse_mode` is disabled in Zellij config for consistent text selection
+- **Paste**: `Cmd+v` anywhere
+
 ---
 
 ## 📝 NvChad (Neovim)
@@ -266,6 +271,16 @@ Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/lock
 - `>` → Indent right
 - `<` → Indent left
 
+### Copy/Paste (Clipboard Integration)
+- `yy` → Yank (copy) current line to system clipboard
+- `V` + `hjkl` + `y` → Visual select lines and yank to clipboard
+- `v` + movement + `y` → Visual select characters and yank
+- `yiw` → Yank inner word (cursor on word)
+- `yap` → Yank a paragraph
+- `p` → Paste from clipboard after cursor
+- `P` → Paste before cursor
+- **Note**: Clipboard integration via `clipboard = "unnamedplus"` - all yanks go to system clipboard
+
 ---
 
 ## 🎯 Quick Reference
@@ -299,9 +314,10 @@ Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/lock
 - `y` → Yank to clipboard
 
 **Copy/Paste:**
-- Shell: Select text (auto-copies) or `Cmd+c`
-- Nvim: Visual select + `y`
-- Paste anywhere: `Cmd+v`
+- **Terminal/Shell/Claude Code**: Mouse select text (auto-copies to clipboard)
+- **Neovim**: `V` (visual line) → `hjkl` (select) → `y` (yank to clipboard)
+- **Paste anywhere**: `Cmd+v`
+- **Note**: Mouse mode disabled in Zellij for consistent selection behavior
 
 ---
 

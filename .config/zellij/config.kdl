@@ -348,8 +348,8 @@ default_layout "three-tabs"
 // Options:
 //   - true (default)
 //   - false
-// 
-mouse_mode true
+//
+mouse_mode false
  
 // Toggle having pane frames around the panes
 // Options:
