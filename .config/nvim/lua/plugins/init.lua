@@ -10,7 +10,8 @@ return {
     "nvim-tree/nvim-tree.lua",
     opts = {
       filters = {
-        custom = { ".DS_Store" },
+        git_ignored = true,
+        custom = { ".DS_Store", ".git" },
       },
     },
   },
