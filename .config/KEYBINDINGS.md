@@ -178,9 +178,10 @@ Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/lock
 - `j/k` → Scroll | `u/d` → Half page | `Ctrl+f/b` → Full page
 
 ### Copy/Paste in Terminal
-- **Mouse selection**: Just select text with mouse → auto-copies to clipboard
-- **Note**: `mouse_mode` is disabled in Zellij config for consistent text selection
+- **Copy text**: Just select with mouse → auto-copies to clipboard
+- **Scroll**: Mouse wheel works normally
 - **Paste**: `Cmd+v` anywhere
+- **Note**: In locked mode (default), mouse selection works seamlessly
 
 ---
 
@@ -314,19 +315,18 @@ Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/lock
 - `y` → Yank to clipboard
 
 **Copy/Paste:**
-- **Terminal/Shell/Claude Code**: Mouse select text (auto-copies to clipboard)
+- **Terminal/Shell/Claude Code**: Select text with mouse (auto-copies)
 - **Neovim**: `V` (visual line) → `hjkl` (select) → `y` (yank to clipboard)
 - **Paste anywhere**: `Cmd+v`
-- **Note**: Mouse mode disabled in Zellij for consistent selection behavior
 
 ---
 
 ## 📚 Notes
 
-- **Zellij Locked Mode**: All `Ctrl+` keys pass to shell/nvim. Use `Ctrl+g` to unlock for Zellij commands.
+- **Zellij Locked Mode**: All keys pass through to shell/nvim. Mouse selection works seamlessly.
+- **Zellij Sessions**: Persist between terminal closures - `Ctrl+q` detaches, doesn't kill
 - **Dvorak Layout**: Aerospace uses H/N/T/S instead of H/J/K/L
 - **WezTerm Auto-reload**: `Cmd+r` or automatic on file changes
-- **Zellij Sessions**: Persist between terminal closures - `Ctrl+q` detaches, doesn't kill
 - **NvChad Leader**: `Space` key - most commands start with it
 
 ---
