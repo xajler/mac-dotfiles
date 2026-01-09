@@ -136,6 +136,7 @@ Zellij runs in **locked mode** by default - all keys pass through to shell/nvim.
 | `Cmd+1/2/3` | Switch to tab 1/2/3 (via WezTerm) |
 | `Cmd+[/]` | Previous/next tab (via WezTerm) |
 | `Cmd+d` | Split pane vertically (via WezTerm) |
+| ``Alt+` `` | **Toggle** to last used tab |
 | `Ctrl+q` | **Detach** session (keeps it alive) |
 | `Ctrl+g` | **Unlock** Zellij (enter normal mode) |
 
@@ -296,6 +297,7 @@ Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/lock
 
 **Zellij:**
 - `Cmd+1/2/3` → Switch tabs
+- ``Alt+` `` → Toggle last used tab
 - `Cmd+d` → Split pane
 - `Ctrl+g` → `Ctrl+p` → `h/j/k/l` → Navigate panes
 - `Ctrl+q` → Detach session
