@@ -201,18 +201,35 @@ Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/lock
 - `H` → Toggle hidden files
 - `I` → Toggle gitignored files
 - `R` → Refresh tree
-- `A` → Create new file/folder
-- `D` → Delete file/folder
-- `R` → Rename file/folder
-- `C` → Copy file
-- `X` → Cut file
-- `P` → Paste file
-- `Y` → Copy filename
+
+**Single File Operations:**
+- `a` → Create new file/folder
+- `d` → Trash file/folder (moves to system trash)
+- `D` → **Permanently delete** file/folder (bypasses trash)
+- `r` → Rename file/folder
+- `c` → Copy file
+- `x` → Cut file
+- `p` → Paste file
+- `y` → Copy filename
+- `Y` → Copy relative path
+- `gy` → Copy absolute path
+
+**Multi-File Operations (Visual Selection):**
+- `Shift + V` → Enter visual line mode
+- `j/k` → Select multiple files down/up
+- `m` → Mark all selected files (toggle marks)
+- `bd` → **Bulk delete** all marked files
+- `bt` → **Bulk trash** all marked files
+- `bmv` → Bulk move marked files
+- `bc` → Bulk copy marked files
+- Alternative in visual mode: `<leader>mt/ma/md` for toggle/add/remove marks
+
+**Navigation:**
 - `G` → Go to top
 - `Shift + G` → Go to bottom
 - `]` → Next git item
 - `[` → Previous git item
-- `?` → Show help
+- `g?` → Show all keybindings help
 
 ### File Search & Navigation
 - `Leader + FF` → Find files (Telescope)
@@ -315,6 +332,7 @@ Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/lock
 - `Space+fw` → Find word
 - `gd` → Go to definition
 - `y` → Yank to clipboard
+- **File tree multi-delete**: `Shift+V` → `j/k` → `m` → `bd`
 
 **Copy/Paste:**
 - **Terminal/Shell/Claude Code**: Select text with mouse (auto-copies)

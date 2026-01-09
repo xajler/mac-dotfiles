@@ -105,6 +105,13 @@ keybind = super+one=unbind
 keybind = super+two=unbind
 keybind = super+three=unbind
 
+# Zellij prev/next tab (Cmd+[ / Cmd+]) - sends Alt+p / Alt+n
+keybind = super+left_bracket=text:\x1bp
+keybind = super+right_bracket=text:\x1bn
+
+# Zellij split pane (Cmd+d) - sends Alt+d
+keybind = super+d=text:\x1bd
+
 # background - https://wallhaven.cc/
 # background-blur-radius = 40
 # background-blur = true
