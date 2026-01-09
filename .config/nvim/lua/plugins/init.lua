@@ -13,6 +13,21 @@ return {
         git_ignored = true,
         custom = { ".DS_Store", ".git" },
       },
+      on_attach = function(bufnr)
+        local api = require("nvim-tree.api")
+
+        -- Default mappings
+        api.config.mappings.default_on_attach(bufnr)
+
+        -- Custom bulk operation keybindings
+        local function opts(desc)
+          return { desc = "nvim-tree: " .. desc, buffer = bufnr, noremap = true, silent = true, nowait = true }
+        end
+
+        vim.keymap.set("n", "bd", api.marks.bulk.delete, opts("Bulk Delete (permanent)"))
+        vim.keymap.set("n", "bt", api.marks.bulk.trash, opts("Bulk Trash (to system trash)"))
+        vim.keymap.set("n", "bmv", api.marks.bulk.move, opts("Bulk Move"))
+      end,
     },
   },
 
