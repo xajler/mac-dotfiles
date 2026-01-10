@@ -62,7 +62,7 @@ config.native_macos_fullscreen_mode = false
 
 -- Add event handler to maximize window on startup
 wezterm.on('gui-startup', function(cmd)
-  local tab, pane, window = wezterm.mux.spawn_window(cmd or {})
+  local _, _, window = wezterm.mux.spawn_window(cmd or {})
   window:gui_window():maximize()
 end)
 config.hide_tab_bar_if_only_one_tab = true
@@ -112,5 +112,15 @@ config.keys = {
 -- Option key behavior (right option as Alt)
 config.send_composed_key_when_left_alt_is_pressed = false
 config.send_composed_key_when_right_alt_is_pressed = false
+
+-- Mouse bindings for URL clicking (works even with Zellij mouse mode)
+config.mouse_bindings = {
+  -- Cmd+click to open URLs
+  {
+    event = { Up = { streak = 1, button = 'Left' } },
+    mods = 'CMD',
+    action = wezterm.action.OpenLinkAtMouseCursor,
+  },
+}
 
 return config

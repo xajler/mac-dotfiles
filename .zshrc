@@ -70,7 +70,7 @@ zstyle ':completion:*' verbose yes
 zstyle ':completion:*:descriptions' format '%B%d%b'
 zstyle ':fzf-tab:*' fzf-flags '--height=70%'
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:z:*' fzf-preview 'ls --color $realpath'
 
 # interesting
 #zstyle ':fzf-tab:complete:bat:*' fzf-preview --height=10 '[[ -d "$realpath" ]] && ls --color "$realpath" || bat --style=numbers --color=always "$realpath"'
@@ -166,5 +166,12 @@ alias tmd='zm dotfiles ~'
 alias tml='zellij list-sessions'
 alias tmk='zellij delete-session'  # Kill session: tmk session-name
 
+# Claude Code with Opus 4.5 (Bedrock)
+alias cm='claude --model us.anthropic.claude-opus-4-5-20251101-v1:0'
+
 # Initialize zoxide (must be at the end)
-eval "$(zoxide init --cmd cd zsh)"
+# Use 'z' command instead of overriding 'cd' to avoid issues with non-zsh contexts
+eval "$(zoxide init zsh)"
+
+# Alias for zoxide interactive picker (zi conflicts with zinit)
+alias zz='__zoxide_zi'

@@ -4,6 +4,57 @@ Complete keyboard shortcuts for all tools in the dotfiles setup.
 
 ---
 
+## ⌨️ Karabiner-Elements (Key Remapping)
+
+Karabiner runs at the lowest level, remapping physical keys before any application sees them.
+
+### Physical Layout (MacBook Pro)
+
+```
+┌─────────┬─────────┬─────────┬─────────┬─────────────┬─────────┬─────────┐
+│ Fn→Ctrl │ Ctrl→Fn │   Alt   │   Cmd   │    Space    │Cmd→Ctrl │   Alt   │
+│ (pinky) │ (backup)│         │         │             │ (thumb) │         │
+└─────────┴─────────┴─────────┴─────────┴─────────────┴─────────┴─────────┘
+
+              ┌─────────────────────────────┐
+              │         Caps Lock           │
+              │  Hold = Option (Aerospace)  │
+              │  Tap  = Escape (Vim/shell)  │
+              └─────────────────────────────┘
+```
+
+### Simple Modifications
+
+| Physical Key | Maps To | Purpose |
+|--------------|---------|---------|
+| `Fn` (corner) | `Control` | Easy left pinky Ctrl access |
+| `Left Control` | `Fn` | Backup Fn if needed |
+| `Right Command` | `Control` | Right thumb Ctrl access |
+
+### Complex Modifications
+
+| Key | Action | Maps To | Purpose |
+|-----|--------|---------|---------|
+| `Caps Lock` | Hold | `Option` | Aerospace window management |
+| `Caps Lock` | Tap | `Escape` | Exit Vim/kindaVim Normal mode |
+| `Alt+1-9,0` | Press | Aerospace workspace 1-10 | Global workspace switching |
+| `Alt+Shift+1-9,0` | Press | Move window to workspace | Global window moving |
+
+### Usage Examples
+
+| Action | Keys | Hand Position |
+|--------|------|---------------|
+| `Ctrl+a` (start of line) | `Fn` + `a` | Left pinky + left hand |
+| `Ctrl+r` (Atuin search) | `Fn` + `r` | Left pinky + left hand |
+| `Ctrl+k` (kill line) | `Fn` + `k` | Left pinky + right hand |
+| `Alt+1` (workspace 1) | `Caps` + `1` | Left pinky + left hand |
+| `Alt+H` (focus left) | `Caps` + `H` | Left pinky + left hand |
+| Exit Vim Normal mode | Tap `Caps` | Left pinky tap |
+| `Ctrl+n` (nvim tree) | `Right Cmd` + `n` | Right thumb + right hand |
+| `Ctrl+g` (unlock Zellij) | `Fn` + `g` | Left pinky + left hand |
+
+---
+
 ## 🐚 Shell (Zsh) - Emacs Mode
 
 ### Cursor Movement
@@ -306,6 +357,12 @@ Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/lock
 
 ### Daily Workflow
 
+**Karabiner (Physical Keys):**
+- `Fn` key → Control (left pinky)
+- `Right Cmd` → Control (right thumb)
+- `Caps` hold → Option (for Aerospace)
+- `Caps` tap → Escape (for Vim)
+
 **Aerospace (Window Manager):**
 - `Alt+Enter` → Launch WezTerm
 - `Alt+1-9` → Switch workspace
@@ -343,6 +400,7 @@ Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/lock
 
 ## 📚 Notes
 
+- **Karabiner Layer**: Runs first - all remaps happen before apps see keys. Caps Lock dual-function has slight delay (~200ms) to detect hold vs tap.
 - **Zellij Locked Mode**: All keys pass through to shell/nvim. Mouse selection works seamlessly.
 - **Zellij Sessions**: Persist between terminal closures - `Ctrl+q` detaches, doesn't kill
 - **Dvorak Layout**: Aerospace uses H/N/T/S instead of H/J/K/L
