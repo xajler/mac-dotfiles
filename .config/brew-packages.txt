@@ -64,7 +64,7 @@ font-sf-mono
 font-sf-pro
 font-ubuntu
 ghostty
-google-chrome
+helium-browser
 iina
 karabiner-elements
 keepassxc
