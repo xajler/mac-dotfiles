@@ -18,27 +18,35 @@ A collection of configuration files for my macOS setup, managed with Git.
 ### Terminal & Shell
 - **Zsh**: Shell configuration (`.zshrc`, `.zprofile`, `.zshenv`).
   - **Powerlevel10k**: Theme configuration (`.p10k.zsh`).
-  - **Modern CLI tools**: bat (cat), eza (ls), atuin (history), direnv (env management).
-  - **Ghostty**: Terminal emulator configuration (`.config/ghostty/`).
-    - Custom shaders and themes.
-- **Tmux**: Terminal multiplexer (`.tmux.conf`).
-  - Session management with auto-save/restore
-  - Smart session switcher with fzf
-  - 3-window project layout (shell, claude, nvim)
+  - **Modern CLI tools**: bat (cat), eza (ls), atuin (history), direnv (env management), zoxide (cd).
+- **[WezTerm](https://wezfurlong.org/wezterm/)**: Primary terminal emulator (`.config/wezterm/`).
+  - Zellij integration keybindings.
+- **[Ghostty](https://ghostty.org/)**: Alternative terminal emulator (`.config/ghostty/`).
+  - Custom shaders and themes.
+- **[Zellij](https://zellij.dev/)**: Terminal multiplexer (`.config/zellij/`).
+  - Session management with custom aliases (`zm`, `tml`, `tmk`).
+  - Locked mode by default for seamless shell usage.
+  - 3-tab project layout (shell, claude, nvim).
 - **Fastfetch**: System information fetch tool (`.config/fastfetch/`).
 - **Git**: Global git configuration (`.config/git/`).
 
 ### Utilities
 - **Raycast**: Productivity tool extensions and scripts (`.config/raycast/`).
-- **Karabiner Elements**: Keyboard customization (`.config/karabiner/`).
+- **[Karabiner-Elements](https://karabiner-elements.pqrs.org/)**: Keyboard customization (`.config/karabiner/`).
+  - Fn ↔ Control swap for ergonomic Ctrl access.
+  - Caps Lock: Hold=Option, Tap=Escape.
+  - Right Command → Control.
+  - Aerospace workspace hotkeys via shell commands.
 
 ## ⌨️ Keybindings
 
 Quick access to keyboard shortcuts:
-- [Shell (Zsh) keybindings](.config/KEYBINDINGS.md#-shell-zsh) - Terminal navigation, history, editing
-- [Aerospace keybindings](.config/KEYBINDINGS.md#-aerospace-window-manager) - Window management, workspaces, layouts, service mode
+- [Karabiner keybindings](.config/KEYBINDINGS.md#%EF%B8%8F-karabiner-elements-key-remapping) - Physical key remapping, modifier setup
+- [Shell (Zsh) keybindings](.config/KEYBINDINGS.md#-shell-zsh---emacs-mode) - Terminal navigation, history, editing
+- [Aerospace keybindings](.config/KEYBINDINGS.md#-aerospace-window-manager) - Window management, workspaces, layouts
 - [WezTerm keybindings](.config/KEYBINDINGS.md#-wezterm-terminal-emulator) - Terminal emulator shortcuts
 - [Zellij keybindings](.config/KEYBINDINGS.md#-zellij-terminal-multiplexer) - Session management, tab/pane navigation
+- [NvChad keybindings](.config/KEYBINDINGS.md#-nvchad-neovim) - Neovim editor shortcuts
 
 Full reference: [.config/KEYBINDINGS.md](.config/KEYBINDINGS.md)
 
