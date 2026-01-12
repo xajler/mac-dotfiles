@@ -21,6 +21,13 @@
 # Include .config directory
 !.config/
 
+# Include .claude directory (selected files only)
+!.claude/
+.claude/*
+!.claude/CLAUDE.md
+!.claude/statusline.sh
+!.claude/commands/
+
 # Don't ignore this .gitignore file
 !.gitignore
 

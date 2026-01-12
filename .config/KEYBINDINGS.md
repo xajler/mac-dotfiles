@@ -51,7 +51,7 @@ Karabiner runs at the lowest level, remapping physical keys before any applicati
 | `Alt+H` (focus left) | `Caps` + `H` | Left pinky + left hand |
 | Exit Vim Normal mode | Tap `Caps` | Left pinky tap |
 | `Ctrl+n` (nvim tree) | `Right Cmd` + `n` | Right thumb + right hand |
-| `Ctrl+g` (unlock Zellij) | `Fn` + `g` | Left pinky + left hand |
+| `Ctrl+Space` (unlock Zellij) | `Fn` + `Space` | Left pinky + thumb |
 
 ---
 
@@ -189,13 +189,13 @@ Zellij runs in **locked mode** by default - all keys pass through to shell/nvim.
 | `Cmd+d` | Split pane vertically (via WezTerm) |
 | ``Alt+` `` | **Toggle** to last used tab |
 | `Ctrl+q` | **Detach** session (keeps it alive) |
-| `Ctrl+g` | **Unlock** Zellij (enter normal mode) |
+| `Ctrl+Space` | **Unlock** Zellij (enter normal mode) |
 
 ### Navigate Between Panes (after splitting)
-1. `Ctrl+g` → Unlock Zellij
+1. `Ctrl+Space` → Unlock Zellij
 2. `Ctrl+p` → Enter pane mode
 3. `h/j/k/l` → Move left/down/up/right
-4. `Esc` → Exit pane mode (returns to normal, use `Ctrl+g` to re-lock)
+4. `Esc` → Exit pane mode (returns to normal, use `Ctrl+Space` to re-lock)
 
 ### Session Management
 | Command | Action |
@@ -211,7 +211,7 @@ Zellij runs in **locked mode** by default - all keys pass through to shell/nvim.
 alias tmp='zm pulumi ~/src/myproject'
 ```
 
-### After Unlocking (Ctrl+g)
+### After Unlocking (Ctrl+Space)
 
 Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/locked.
 
@@ -373,7 +373,7 @@ Once unlocked, you can access Zellij modes. Press `Esc` to return to normal/lock
 - `Cmd+1/2/3` → Switch tabs
 - ``Alt+` `` → Toggle last used tab
 - `Cmd+d` → Split pane
-- `Ctrl+g` → `Ctrl+p` → `h/j/k/l` → Navigate panes
+- `Ctrl+Space` → `Ctrl+p` → `h/j/k/l` → Navigate panes
 - `Ctrl+q` → Detach session
 
 **Shell (Emacs):**

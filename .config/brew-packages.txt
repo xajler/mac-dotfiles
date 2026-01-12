@@ -1,9 +1,9 @@
 # Homebrew Packages
-# Generated: 2026-01-06
+# Generated: 2026-01-12
 #
 # This list contains only explicitly installed packages (not dependencies).
 # Dependencies will be automatically installed when you install these packages.
-# 
+#
 # To reinstall all packages:
 #   brew install $(cat brew-packages.txt | grep -v "^#" | grep -v "^$" | grep -v "^## ")
 #
@@ -11,7 +11,7 @@
 #   brew bundle dump --file=Brewfile
 #   brew bundle install --file=Brewfile
 
-## Formulae (35 packages - explicitly installed, no dependencies)
+## Formulae (37 packages - explicitly installed, no dependencies)
 
 atuin
 awscli
@@ -24,23 +24,25 @@ eza
 fastfetch
 felixkratz/formulae/sketchybar
 fzf
+gh
 go
 hdf5
 jq
 lapack
 lua
+lua-language-server
 mac
+marksman
 mpv
 neovim
 node
-node@22
 ollama
 pipx
 poppler
 pulumi
 r
+ripgrep
 shntool
-surrealdb/tap/surreal
 terraform
 tesseract-lang
 tfenv
@@ -52,7 +54,6 @@ zoxide
 ## Casks (35 applications)
 
 aerospace
-calendar-366
 cursor
 docker-desktop
 font-arial
@@ -64,11 +65,12 @@ font-sf-mono
 font-sf-pro
 font-ubuntu
 ghostty
+google-chrome
 helium-browser
 iina
 karabiner-elements
 keepassxc
-kiro
+keymapp
 libreoffice
 microsoft-auto-update
 microsoft-teams
