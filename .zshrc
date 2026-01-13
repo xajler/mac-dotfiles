@@ -133,7 +133,37 @@ alias ppp="pulumi package publish"
 alias pi="pulumi install"
 alias pr="pulumi refresh"
 alias put="pulumi-update-template"
-alias bu="brew update && brew upgrade --greedy && brew autoremove && brew cleanup && brew services restart sketchybar" # && mas upgrade"
+
+# Smart brew update function
+unalias bu 2>/dev/null  # Remove any existing alias first
+bu() {
+  # Check what needs updating
+  local formulae_count=$(brew outdated --quiet 2>/dev/null | wc -l | tr -d ' ')
+  local cask_normal_count=$(brew outdated --cask --quiet 2>/dev/null | wc -l | tr -d ' ')
+  local cask_greedy_count=$(brew outdated --cask --greedy --quiet 2>/dev/null | wc -l | tr -d ' ')
+
+  # Calculate what actually needs greedy
+  local greedy_only=$((cask_greedy_count - cask_normal_count))
+
+  if [ $formulae_count -eq 0 ] && [ $cask_greedy_count -eq 0 ]; then
+    echo "✅ Nothing to update"
+    return 0
+  fi
+
+  echo "📦 Formulae: $formulae_count | 🍺 Casks: $cask_normal_count | 🚀 Greedy: $greedy_only"
+
+  # Update based on what's available
+  brew update
+  if [ $greedy_only -gt 0 ]; then
+    brew upgrade --greedy
+  else
+    brew upgrade
+  fi
+
+  brew autoremove
+  brew cleanup
+  ~/.config/sketchybar/helpers/brew_update.sh
+}
 
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"

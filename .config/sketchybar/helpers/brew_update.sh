@@ -3,8 +3,8 @@
 export PATH="/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Get outdated count directly (no brew update - faster and less prone to failure)
-formulae=$(brew outdated --quiet 2>/dev/null | grep -c '^' || echo 0)
-casks=$(brew outdated --cask --greedy --quiet 2>/dev/null | grep -c '^' || echo 0)
+formulae=$(brew outdated --quiet 2>/dev/null | wc -l | tr -d ' ')
+casks=$(brew outdated --cask --greedy --quiet 2>/dev/null | wc -l | tr -d ' ')
 
 # Calculate total
 total=$((formulae + casks))
