@@ -193,8 +193,10 @@ zm() {
 
 # Quick project session aliases
 alias tmd='zm dotfiles ~'
+alias tmp='zm pulumi ~/src/ae/pulumi'
+alias tmr='zm rag ~/src/rag/learn-rag/'
 alias tml='zellij list-sessions'
-alias tmk='zellij delete-session'  # Kill session: tmk session-name
+alias tmk='zellij delete-session --force'  # Kill session: tmk session-name
 
 # Claude Code with Opus 4.5 (Bedrock)
 alias cm='claude --model us.anthropic.claude-opus-4-5-20251101-v1:0'
