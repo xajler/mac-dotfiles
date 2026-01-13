@@ -11,7 +11,7 @@
 #   brew bundle dump --file=Brewfile
 #   brew bundle install --file=Brewfile
 
-## Formulae (38 packages - explicitly installed, no dependencies)
+## Formulae (39 packages - explicitly installed, no dependencies)
 
 atuin
 awscli
@@ -25,6 +25,7 @@ fastfetch
 felixkratz/formulae/sketchybar
 fzf
 gh
+git-filter-repo
 go
 hdf5
 jq
