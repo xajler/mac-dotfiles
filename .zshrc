@@ -198,6 +198,9 @@ alias tmr='zm rag ~/src/rag/learn-rag/'
 alias tml='zellij list-sessions'
 alias tmk='zellij delete-session --force'  # Kill session: tmk session-name
 
+# AWS Login shortcut
+awsl() { aws login --profile "$1"; }
+
 # Claude Code with Opus 4.5 (Bedrock)
 alias cm='claude --model us.anthropic.claude-opus-4-5-20251101-v1:0'
 
@@ -207,3 +210,4 @@ eval "$(zoxide init zsh)"
 
 # Alias for zoxide interactive picker (zi conflicts with zinit)
 alias zz='__zoxide_zi'
+

@@ -99,6 +99,24 @@ export SECRET_NAME=$(security find-generic-password -a "$USER" -s "SECRET_NAME" 
 - Safe to commit `.zshrc` to public repos
 - Private settings stay in gitignored `.zsh.env`
 
+## 🖥️ macOS System Settings
+
+### Night Shift - Force 24/7 Warm Display
+
+macOS Night Shift UI can't be set to truly 24/7 (leaves a 1-minute gap at midnight). Force it always on:
+
+```bash
+# Enable Night Shift permanently
+defaults write com.apple.CoreBrightness "CBBlueReductionStatus" -dict-add "BlueReductionEnabled" -bool YES "BlueReductionMode" -int 0 "AutoBlueReductionEnabled" -bool NO
+
+# Restart display service to apply
+killall corebrightnessdiagnostics 2>/dev/null || true
+```
+
+**System Settings UI**: Ignore the schedule settings - the command overrides them. You can still adjust the warmth slider.
+
+**To revert**: Toggle Night Shift off/on in System Settings → Displays → Night Shift.
+
 ## 📝 License
 
 [GPLv3](LICENSE)
