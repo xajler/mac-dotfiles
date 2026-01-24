@@ -93,7 +93,6 @@ export GIT_EDITOR=nvim
 
 export CLAUDE_CODE_USE_BEDROCK=1
 export AWS_REGION=us-east-1
-export CLAUDE_CODE_MAX_OUTPUT_TOKENS=20480
 export MAX_THINKING_TOKENS=1024
 
 #export ANTHROPIC_MODEL=us.anthropic.claude-opus-4-5-20251101-v1:0

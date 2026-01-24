@@ -99,6 +99,38 @@ export SECRET_NAME=$(security find-generic-password -a "$USER" -s "SECRET_NAME" 
 - Safe to commit `.zshrc` to public repos
 - Private settings stay in gitignored `.zsh.env`
 
+## 🔑 SSH Keys
+
+SSH keys are managed via macOS Keychain for seamless authentication across restarts.
+
+### Setup (One-time)
+
+1. **Configure SSH to use Keychain** (already in `.ssh/config`):
+   ```
+   Host *
+     AddKeysToAgent yes
+     UseKeychain yes
+   ```
+
+2. **Add your SSH keys to Keychain:**
+   ```bash
+   ssh-add --apple-use-keychain ~/.ssh/id_ed25519_devlinuxtips
+   ssh-add --apple-use-keychain ~/.ssh/id_ed25519_aenetworks
+   ```
+
+   This stores the passphrases securely in macOS Keychain.
+
+3. **Verify keys are loaded:**
+   ```bash
+   ssh-add -l
+   ```
+
+**How it works:**
+- Keys auto-load when first used (e.g., `git push`)
+- Passphrases retrieved from Keychain automatically
+- Survives reboots without prompts
+- No need for `ssh-add` commands in `.zshrc`
+
 ## 🖥️ macOS System Settings
 
 ### Night Shift - Force 24/7 Warm Display
