@@ -115,7 +115,7 @@ SSH keys are managed via macOS Keychain for seamless authentication across resta
 2. **Add your SSH keys to Keychain:**
    ```bash
    ssh-add --apple-use-keychain ~/.ssh/id_ed25519_devlinuxtips
-   ssh-add --apple-use-keychain ~/.ssh/id_ed25519_aenetworks
+   ssh-add --apple-use-keychain ~/.ssh/id_ed25519
    ```
 
    This stores the passphrases securely in macOS Keychain.
